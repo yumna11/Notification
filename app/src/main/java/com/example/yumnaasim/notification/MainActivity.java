@@ -23,10 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        alert();
+
+    }
+
+    private void alert() {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         NotificationCompat.Builder notifyBuilder = new NotificationCompat.Builder(getApplicationContext());
-        notifyBuilder.setSmallIcon(R.mipmap.ic_launcher);
+        notifyBuilder.setSmallIcon(R.drawable.ic_add_alert_black_24dp);
         notifyBuilder.setTicker("Hello");
         notifyBuilder.setWhen(System.currentTimeMillis());
 
@@ -43,4 +48,6 @@ public class MainActivity extends AppCompatActivity {
         Notification notification = notifyBuilder.build();
         notificationManager.notify(NOTIFY_1,notification);
     }
+
+
 }
